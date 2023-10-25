@@ -1,5 +1,5 @@
 import React, {useEffect} from 'react'
-import backgroundVideo from '../img/backGround.mp4'
+// import backgroundVideo from '../img/backGround.mp4'
 import backgroudimg from '../img/frontimg.jpg'
 import room1 from '../img/4.jpg'
 import room2 from '../img/5.jpg'
@@ -18,10 +18,10 @@ export default function Home() {
         <>
 
             <div className='hero'>
-
+{/* 
                 <video autoPlay loop muted playsInline className='backVideo'>
                     <source src={backgroundVideo} />
-                </video>
+                </video> */}
                 <div className='content'>
                     <h1>Where Serenity Meets Luxury</h1>
                     <p className='frontP'>River's Edge Villa offers a harmonious blend of tranquility and opulence, nestled in nature's embrace. Experience a haven of relaxation with breathtaking riverside views, sumptuous accommodations, and unparalleled serenity. Your escape to luxury begins here.</p>
