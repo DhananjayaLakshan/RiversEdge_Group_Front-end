@@ -24,7 +24,7 @@ export default function Navigation() {
 
     return (
         <div>
-            <nav className="navbar navbar-expand-lg  ">
+            <nav className="navbar navbar-expand-lg">
                 <div className="container-fluid ">
 
                     <a className="navbar-brand " href="/" >

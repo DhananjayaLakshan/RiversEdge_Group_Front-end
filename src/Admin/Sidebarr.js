@@ -1,6 +1,5 @@
 import React from 'react'
 import './style.css'
-import logo from '../img/logo.png'
 import { Link } from 'react-router-dom'
 import { BsCalendar2Week, BsPersonFill, BsBookmarkStarFill, BsGraphDown, BsStack, BsPeopleFill } from "react-icons/bs";
 import { IoRestaurant } from "react-icons/io5";
@@ -11,9 +10,7 @@ export default function Sidebarr() {
         <div id="nav-bar" style={{ marginTop:'163px' }}>
             <input id="nav-toggle" type="checkbox" />
             <div id="nav-header">
-                <div>
-                <img src={logo} alt="" width='100px'/>
-                </div>
+                
                 <a id="nav-title" href="#" target="_blank">
                     <i className="fab fa-codepen" />
                     RIVER'S EDGE
