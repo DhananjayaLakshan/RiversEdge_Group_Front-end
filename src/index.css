@@ -1,4 +1,4 @@
-  @import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@500&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@500&display=swap');
 body {
   margin: 0;
   font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
@@ -574,25 +574,25 @@ input {
   background-color: #FCF9EF !important;
 }
 
-table {
+.tableCSS {
   border-collapse: separate;
   border-spacing: 0 5px;
-  margin-left: 150px;
-  width: 80% !important;
+  margin-left: 50px;
+  width: 90% !important;
 
 }
 
-th {
+.thCSS {
   text-align: center;
   background-color: none;
 }
 
-td {
+.tdCSS {
   text-align: center;
   background-color: #E9E3D3;
 }
 
-tr {
+.trCSS {
   border-radius: 10%;
   margin-right: 20px;
 }

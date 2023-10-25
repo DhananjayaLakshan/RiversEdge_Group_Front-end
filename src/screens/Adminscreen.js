@@ -170,13 +170,12 @@ export function Bookings() {
 
                 <button onClick={generateExcelReport}
                     class="btn btnColour mb-3"
-                    style={{marginLeft:'147px'}}
                 >
                     <UilFileGraph />
                     Export to Excel
                 </button>
 
-                <div className="row col-md-10" style={{marginLeft:'135px'}}>
+                <div className="row col-md-10" >
 
                     <div className="" value={status} onChange={(e) => filterByType(e.target.value)}>
                         <select className="form-control" style={{ backgroundColor: '#FCF9EF' }}>
@@ -193,28 +192,28 @@ export function Bookings() {
                     style={{ border: "solid 2px #C2BDB8" }}
                 >
                     <thead style={{ backgroundColor: "#FCF9EF" }}>
-                        <tr>
-                            <th scope="col">BookingID</th>
-                            <th scope="col">UserID</th>
-                            <th scope="col">Room</th>
-                            <th scope="col">CheckIn</th>
-                            <th scope="col">CheckOut</th>
-                            <th scope="col">Bill amount</th>
-                            <th scope="col">Status</th>
+                        <tr className="trCSS">
+                            <th scope="col" className="thCSS">BookingID</th>
+                            <th scope="col" className="thCSS">UserID</th>
+                            <th scope="col" className="thCSS">Room</th>
+                            <th scope="col" className="thCSS">CheckIn</th>
+                            <th scope="col" className="thCSS">CheckOut</th>
+                            <th scope="col" className="thCSS">Bill amount</th>
+                            <th scope="col" className="thCSS">Status</th>
                         </tr>
                     </thead>
                     <tbody style={{ backgroundColor: "#E9E3D3" }}>
                         {bookings.length &&
                             bookings.map((booking) => {
                                 return (
-                                    <tr>
-                                        <td>{booking._id}</td>
-                                        <td>{booking.userName}</td>
-                                        <td>{booking.room}</td>
-                                        <td>{booking.fromdate}</td>
-                                        <td>{booking.todate}</td>
-                                        <td>Rs.{booking.totalamount} .00</td>
-                                        <td>
+                                    <tr className="trCSS">
+                                        <td className="tdCSS">{booking._id}</td>
+                                        <td className="tdCSS">{booking.userName}</td>
+                                        <td className="tdCSS">{booking.room}</td>
+                                        <td className="tdCSS">{booking.fromdate}</td>
+                                        <td className="tdCSS">{booking.todate}</td>
+                                        <td className="tdCSS">Rs.{booking.totalamount} .00</td>
+                                        <td className="tdCSS">
                                             <b>{booking.status}</b>
                                         </td>
                                     </tr>
@@ -331,34 +330,34 @@ export function Rooms() {
                     style={{ border: "solid 2px #C2BDB8" }}
                 >
                     <thead style={{ backgroundColor: "#FCF9EF" }}>
-                        <tr>
-                            <th scope="col">RoomID</th>
-                            <th scope="col">Name</th>
-                            <th scope="col">Type</th>
-                            <th scope="col">Rent per day</th>
-                            <th scope="col">Max count</th>
-                            <th scope="col">Phone number</th>
-                            <th scope="col">Action</th>
+                        <tr className="trCSS">
+                            <th scope="col"  className="thCSS">RoomID</th>
+                            <th scope="col"  className="thCSS">Name</th>
+                            <th scope="col"  className="thCSS">Type</th>
+                            <th scope="col"  className="thCSS">Rent per day</th>
+                            <th scope="col"  className="thCSS">Max count</th>
+                            <th scope="col"  className="thCSS">Phone number</th>
+                            <th scope="col"  className="thCSS">Action</th>
                         </tr>
                     </thead>
                     <tbody style={{ backgroundColor: "#E9E3D3" }}>
                         {rooms.length &&
                             rooms.map((room) => {
                                 return (
-                                    <tr>
-                                        <td>{(roomid = room._id)}</td>
-                                        <td>{(name = room.name)}</td>
-                                        <td>{(type = room.type)}</td>
-                                        <td>Rs.{(rentperday = room.rentperday)}.00</td>
-                                        <td>{(maxcount = room.maxcount)}</td>
-                                        <td>{(phonenumber = room.phonenumber)}</td>
-                                        <td style={{ display: "none" }}>
+                                    <tr className="trCSS">
+                                        <td className="tdCSS">{(roomid = room._id)}</td>
+                                        <td className="tdCSS">{(name = room.name)}</td>
+                                        <td className="tdCSS">{(type = room.type)}</td>
+                                        <td className="tdCSS">Rs.{(rentperday = room.rentperday)}.00</td>
+                                        <td className="tdCSS">{(maxcount = room.maxcount)}</td>
+                                        <td className="tdCSS">{(phonenumber = room.phonenumber)}</td>
+                                        <td style={{ display: "none" }} className="tdCSS">
                                             {(description = room.description)}
                                         </td>
-                                        <td style={{ display: "none" }}>
+                                        <td style={{ display: "none" }} className="tdCSS">
                                             {(imageurls = room.imageurls.join(","))}
                                         </td>
-                                        <td>
+                                        <td className="tdCSS">
                                             <Link to={`/updateRoom/${roomid}`}>
                                                 <button
                                                     className="btn "

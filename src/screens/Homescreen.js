@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react'
 import axios from 'axios'
 import Loader from '../components/Loader'
-import { DatePicker } from 'antd'
+import { DatePicker } from 'antd';
 import moment from 'moment'
 import Card from '../components/Card'
 import Carousel from '../components/Carosal'
@@ -163,6 +163,7 @@ function Homescreen() {
                 <h4 style={{textAlign:'center'}}>CHECK AVAILABILITY</h4>
 
                 <div className="col-md-3 center">
+                
                     <RangePicker format="DD-MM-YYYY" onChange={filterByDate} />
                 </div>                
 

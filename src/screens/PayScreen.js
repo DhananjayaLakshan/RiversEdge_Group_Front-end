@@ -212,32 +212,32 @@ function PayScreen() {
 
                         <div className="row mt-4">
                             <div className="col-md-12">
-                                <table border={0} className="table mt-5">
+                                <table border={0} className="table mt-5 tableCSS">
                                     <thead style={{ backgroundColor: "#FCF9EF" }}>
-                                        <tr>
-                                            <th scope="col">Payment-ID</th>
-                                            <th scope="col">Type</th>
-                                            <th scope="col">Department</th>
-                                            <th scope="col">Date</th>
-                                            <th scope="col">Amount</th>
-                                            <th scope="col">Status</th>
+                                        <tr className="trCSS">
+                                            <th scope="col" className="thCSS">Payment-ID</th>
+                                            <th scope="col" className="thCSS">Type</th>
+                                            <th scope="col" className="thCSS">Department</th>
+                                            <th scope="col" className="thCSS">Date</th>
+                                            <th scope="col" className="thCSS">Amount</th>
+                                            <th scope="col" className="thCSS">Status</th>
                                             <th colSpan={3}>Options</th>
                                         </tr>
                                     </thead>
                                     <tbody className="tbg">
                                         {filteredPayments.map((payment, index) => (
-                                            <tr key={index}>
-                                                <td>{index + 1}</td>
-                                                <td>{payment.type}</td>
-                                                <td>{payment.department}</td>
-                                                <td>
+                                            <tr key={index} className="trCSS">
+                                                <td className="tdCSS">{index + 1}</td>
+                                                <td className="tdCSS">{payment.type}</td>
+                                                <td className="tdCSS">{payment.department}</td>
+                                                <td className="tdCSS">
                                                     {new Date(payment.date).toLocaleDateString()}
                                                 </td>
-                                                <td>{payment.amount}</td>
+                                                <td className="tdCSS">{payment.amount}</td>
                                                 <td>
                                                     <b>{payment.status}</b>
                                                 </td>
-                                                <td>
+                                                <td className="tdCSS">
                                                     <Link
                                                         className="btnColour btn btn-primary"
                                                         to={`/view/${payment._id}`}
@@ -245,7 +245,7 @@ function PayScreen() {
                                                         <UilEdit />
                                                     </Link>
                                                 </td>
-                                                <td>
+                                                <td className="tdCSS">
                                                     <button
                                                         className="btn"
                                                         onClick={() => deletePayment(payment._id)}
@@ -253,7 +253,7 @@ function PayScreen() {
                                                         <UilTrashAlt />
                                                     </button>
                                                 </td>
-                                                <td>
+                                                <td className="tdCSS">
                                                     <Link
                                                         className="btnColour btn btn-primary"
                                                         to={`/update/${payment._id}`}
