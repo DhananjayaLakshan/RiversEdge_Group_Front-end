@@ -240,7 +240,7 @@ input , select, .ant-picker {
 }
 
 .formColour{
-  background-color:#3B362E;
+  background-color:#E9E3D3;
 }
 
 input{
@@ -248,7 +248,7 @@ input{
 }
 
 .formLabel{
-  color: aliceblue;
+  color: rgb(4, 4, 4) !important;
 }
 
 .inputFeild{
@@ -560,9 +560,7 @@ select,
   float: none;
 }
 
-.formColour {
-  background-color: #3B362E;
-}
+
 
 input {
   background-color: #FCF9EF;

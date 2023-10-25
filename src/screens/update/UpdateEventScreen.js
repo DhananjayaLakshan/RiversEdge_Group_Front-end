@@ -57,9 +57,7 @@ export default function UpdateEventScreen() {
 
         try {
 
-        
-        
-         console.log(event)
+            console.log(event)
             
         axios.put(`/api/event/updateEvents/${ eventId }`, event)
 

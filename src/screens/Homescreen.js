@@ -184,7 +184,7 @@ function Homescreen() {
                 <div className="con-md-3 center" value={type} onChange={(e) => filterByType(e.target.value)}>
                     <select className="form-control">
                         <option value="all">All</option>
-                        <option value="delux">Delux</option>
+                        <option value="deluxe">Deluxe</option>
                         <option value="non-delux">Non-Delux</option>
                     </select>
                 </div>

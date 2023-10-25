@@ -13,8 +13,8 @@ export default function Paymentscreen() {
     const { roomid, fromdate, todate, totalamount, userID, userName, totaldays, email } = useParams()
 
     const [loading, setLoading] = useState()
-    const [error, setError] = useState()
-    const [room, setroom] = useState({})
+    const [error, setError]     = useState()
+    const [room, setroom]       = useState({})
 
     const [phonenumber, setphonenumber] = useState("required")
     const [address, setAddress] = useState("required")
@@ -74,7 +74,7 @@ export default function Paymentscreen() {
     return (
         <div data-aos="fade-down" className='col-md-8 bs center formColour mt-5 mb-5'>
 
-            <h4 style={{ fontSize: '50px', color: 'white', fontWeight: 'bold', marginBottom: '50px', textAlign: 'center' }}>Hotel Booking</h4>
+            <h4 style={{ fontSize: '50px', color: 'black', fontWeight: 'bold', marginBottom: '50px', textAlign: 'center' }}>Hotel Booking</h4>
 
             <div class="form-row">
 
