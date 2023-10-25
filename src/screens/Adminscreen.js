@@ -9,6 +9,8 @@ import AddService from "./add/AddService"
 import { UilTrashAlt, UilEdit, UilFileGraph } from '@iconscout/react-unicons'
 import ExcelJS from 'exceljs'
 import saveAs from 'file-saver'
+import jsPDF from 'jspdf';
+import 'jspdf-autotable';
 import Sidebarr from "../Admin/Sidebarr"
 import Aos from 'aos'
 const { TabPane } = Tabs
@@ -105,6 +107,38 @@ export function Bookings() {
         fetchBookings(); // Call the async function here
     }, []);
 
+    // Function to generate and download a PDF report
+    const generatePdfReport = () => {
+        if (bookings.length === 0) {
+            alert('No booking data to export.');
+            return;
+        }
+
+        const doc = new jsPDF();
+
+        doc.text('Booking Report', 10, 10);
+
+        const tableHeaders = ['BookingID', 'UserID', 'Room', 'CheckIn', 'CheckOut', 'Bill amount', 'Status'];
+
+        const tableData = bookings.map(booking => [
+            booking._id,
+            booking.userName,
+            booking.room,
+            booking.fromdate,
+            booking.todate,
+            `Rs.${booking.totalamount}.00`,
+            booking.status,
+        ]);
+
+        doc.autoTable({
+            head: [tableHeaders],
+            body: tableData,
+        });
+
+        doc.save('booking_report.pdf');
+    };
+
+
 
     // Function to generate and download the Excel report
     const generateExcelReport = () => {
@@ -175,6 +209,14 @@ export function Bookings() {
                     Export to Excel
                 </button>
 
+                <button
+                    onClick={generatePdfReport}
+                    className="btn btnColour mb-3 ml-3"
+                >
+                    <UilFileGraph />
+                    Generate PDF Report
+                </button>
+
                 <div className="row col-md-10" >
 
                     <div className="" value={status} onChange={(e) => filterByType(e.target.value)}>
@@ -206,13 +248,13 @@ export function Bookings() {
                         {bookings.length &&
                             bookings.map((booking) => {
                                 return (
-                                    <tr className="trCSS">
+                                    <tr className="trCSS" key={booking._id}>
                                         <td className="tdCSS">{booking._id}</td>
                                         <td className="tdCSS">{booking.userName}</td>
                                         <td className="tdCSS">{booking.room}</td>
                                         <td className="tdCSS">{booking.fromdate}</td>
                                         <td className="tdCSS">{booking.todate}</td>
-                                        <td className="tdCSS">Rs.{booking.totalamount} .00</td>
+                                        <td className="tdCSS">Rs.{booking.totalamount}.00</td>
                                         <td className="tdCSS">
                                             <b>{booking.status}</b>
                                         </td>
