@@ -1,14 +1,14 @@
 import "./App.css";
 import Navbar from "./components/Navbar";
 import { BrowserRouter, Route, Routes } from "react-router-dom";
-import Homescreen from "./screens/Homescreen";
-import Bookingscreen from "./screens/Bookingscreen";
+import Homescreen from "./screens/bookingManagement/Homescreen";
+import Bookingscreen from "./screens/bookingManagement/Bookingscreen";
 import RegisterScreen from "./screens/RegisterScreen";
 import LoginScreen from "./screens/LoginScreen";
 import Profilescreen from "./screens/Profilescreen";
 import Adminscreen from "./screens/Adminscreen";
 import Footer from "./components/Footer";
-import Paymentscreen from "./screens/Paymentscreen";
+import Paymentscreen from "./screens/bookingManagement/Paymentscreen";
 import UpdateRoomScreen from "./screens/update/UpdateRoomScreen";
 import PackagesScreen from "./screens/PackagesScreen";
 import UpdatePackageScreen from "./screens/update/UpdatePackageScreen";

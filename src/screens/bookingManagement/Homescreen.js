@@ -1,15 +1,15 @@
 import React, { useState, useEffect } from 'react'
 import axios from 'axios'
-import Loader from '../components/Loader'
+import Loader from '../../components/Loader'
 import { DatePicker } from 'antd';
 import moment from 'moment'
-import Card from '../components/Card'
-import Carousel from '../components/Carosal'
+import Card from '../../components/Card'
+import Carousel from '../../components/Carosal'
 import Aos from 'aos'
 import 'aos/dist/aos.css'
-import img1 from '../img/caro1.png'
-import img2 from '../img/caro2.png'
-import img3 from '../img/caro3.png'
+import img1 from '../../img/caro1.png'
+import img2 from '../../img/caro2.png'
+import img3 from '../../img/caro3.png'
 
 const { RangePicker } = DatePicker;
 

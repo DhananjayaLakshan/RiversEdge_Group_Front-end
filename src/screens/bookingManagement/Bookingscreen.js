@@ -1,8 +1,8 @@
 import React, { useState, useEffect } from "react";
 import axios from "axios";
 import { Link, useParams } from "react-router-dom";
-import Loader from "../components/Loader";
-import Error from "../components/Error";
+import Loader from "../../components/Loader";
+import Error from "../../components/Error";
 import moment from "moment";
 import Aos from 'aos'
 import 'aos/dist/aos.css'
