@@ -1,11 +1,11 @@
 import React, { useEffect, useState } from "react"
 import { Tabs } from "antd"
 import axios from "axios"
-import Loader from "../components/Loader"
+import Loader from "../../components/Loader"
 import Swal from "sweetalert2"
 import { Link } from "react-router-dom"
 import { UilTrashAlt, UilEdit, UilFileGraph } from '@iconscout/react-unicons'
-import Sidebarr from "../Admin/Sidebarr"
+import Sidebarr from "../../Admin/Sidebarr"
 import Aos from 'aos'
 const { TabPane } = Tabs
 

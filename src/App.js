@@ -19,9 +19,9 @@ import PayScreen from "./screens/PayScreen";
 import AddPayment from "./screens/AddPayment";
 import ViewPayment from "./screens/ViewPayment";
 import Updatepay from "./screens/Updatepay";
-import Eventscreen from "./screens/Eventscreen";
+import Eventscreen from "./screens/eventManagment/Eventscreen";
 import UpdateEventScreen from "./screens/update/UpdateEventScreen";
-import EventHomescreen from "./screens/EventHomescreen";
+import EventHomescreen from "./screens/eventManagment/EventHomescreen";
 
 
 export const URL = "http://localhost:5000"; 
