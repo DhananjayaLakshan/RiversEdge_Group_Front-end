@@ -1,17 +1,17 @@
 import React, { useEffect, useState } from "react"
 import { Tabs } from "antd"
 import axios from "axios"
-import Loader from "../components/Loader"
+import Loader from "../../components/Loader"
 import Swal from "sweetalert2"
 import { Link } from "react-router-dom"
-import AddPackage from "./add/AddPackage"
-import AddService from "./add/AddService"
+import AddPackage from "../add/AddPackage"
+import AddService from "../add/AddService"
 import { UilTrashAlt, UilEdit, UilFileGraph } from '@iconscout/react-unicons'
 import ExcelJS from 'exceljs'
 import saveAs from 'file-saver'
 import jsPDF from 'jspdf';
 import 'jspdf-autotable';
-import Sidebarr from "../Admin/Sidebarr"
+import Sidebarr from "../../Admin/Sidebarr"
 import Aos from 'aos'
 const { TabPane } = Tabs
 

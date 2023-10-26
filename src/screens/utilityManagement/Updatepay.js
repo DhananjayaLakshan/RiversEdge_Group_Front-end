@@ -2,7 +2,7 @@ import axios from 'axios';
 import React, { useEffect, useState } from 'react'
 import { Link, useNavigate, useParams } from 'react-router-dom'
 import Swal from 'sweetalert2'
-import { URL } from '../App';
+import { URL } from '../../App';
 
 
 function Updatepay() {

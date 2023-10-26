@@ -2,7 +2,7 @@ import axios from 'axios'
 import React from 'react'
 import { useEffect, useState } from 'react'
 import { Link, useNavigate, useParams } from 'react-router-dom'
-import { URL } from '../App'
+import { URL } from '../../App'
 
 function ViewPayment() {
     const { id } = useParams()

@@ -1,12 +1,12 @@
 import React, { useState, useEffect } from "react";
 import axios from "axios";
 import { Link } from "react-router-dom";
-import Loader from "../components/Loader";
-import { URL } from "../App";
+import Loader from "../../components/Loader";
+import { URL } from "../../App";
 import Swal from "sweetalert2";
-import Filter from "../components/Filter";
+import Filter from "../../components/Filter";
 import * as XLSX from 'xlsx';
-import Sidebarr from "../Admin/Sidebarr"
+import Sidebarr from "../../Admin/Sidebarr"
 import { UilTrashAlt, UilEdit, UilFileImport, UilPlus, UilFileGraph, UilFileSearchAlt  } from '@iconscout/react-unicons'
 
 
