@@ -57,6 +57,7 @@ function App() {
           <Route path="/inventory" element={<InventoryAdmin />} />
           <Route path="/user" element={<UserAdmin />} />
           <Route path="/userUpdate/:userid" element={<UserUpdateScreen />} />
+         
 
 
           <Route path="/book/:roomid/:fromdate/:todate" element={<Bookingscreen />} />

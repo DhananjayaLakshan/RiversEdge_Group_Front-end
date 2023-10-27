@@ -47,7 +47,9 @@ export default function UserList() {
                     <thead style={{ backgroundColor: "#FCF9EF" }}>
                         <tr>
                             <th scope="col">UserID</th>
-                            <th scope="col">Name</th>
+                            <th scope="col">First Name</th>
+                            <th scope="col">Last Name</th>
+                            <th scope="col">Phone Number</th>
                             <th scope="col">Email</th>
                             <th scope="col">Is Admin</th>
                         </tr>
@@ -58,7 +60,9 @@ export default function UserList() {
                                 return (
                                     <tr>
                                         <td>{user._id}</td>
-                                        <td>{user.name}</td>
+                                        <td>{user.firstName}</td>
+                                        <td>{user.lastName}</td>
+                                        <td>{user.phoneNumber}</td>
                                         <td>{user.email}</td>
                                         <td>{user.isAdmin ? "YES" : "NO"}</td>
                                     </tr>

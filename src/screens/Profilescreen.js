@@ -88,6 +88,8 @@ function MyBookings() {
         }
     }
 
+    
+
     return (
 
         <div>
@@ -138,9 +140,40 @@ function Userprofile(){
         }
 
     })
+
+    let [firstName, setfirstName]     = useState(user.firstName)
+    const [description, setDescription]     = useState("")
+   console.log(firstName);
+   console.log(description);
+
+    async function addFeedback(e) {
+        e.preventDefault
+
+        const newFeedback = {
+            firstName,
+            description
+        }
+
+        try{
+            const result = axios.post("/api/feedback/addfeedback",newFeedback)
+            Swal.fire('Noted', 'Your feedback has been added', 'success').then(result => {
+                window.location.reload()
+            })
+        } catch (err) {
+            console.log(err)
+            Swal.fire('Oops!', 'Something went wrong', 'error')
+        }
+    }
+
+
+    //add feed back
+    
+    
     return(
-        <div class="jumbotron jumbotron-fluid">
+        <div class="jumbotron jumbotron-fluid" style={{display:'flex', alignItems:'center'}}>
+
             <div class="container">
+
                 <h1 class="display-2">Profile</h1>
                     <br />
 
@@ -165,19 +198,43 @@ function Userprofile(){
                             <td><h1 class="display-6"> <b>Email</b>  </h1></td>
                             <td><h1>:{user.email}</h1></td>
                         </tr>
-<br />
+                        <br />
                         <tr>
                             <td>
                                 <Link to={`/userUpdate/${user._id}`}>
                                     <button class="btn btnColour">Update Profile</button>
                                 </Link>
-                            </td>                            
+                            </td>          
+                            <td>
+                                
+                                    
+
+                            </td>                    
                         </tr>
                     </table>
 
 
             </div>
 
+            <div className="container">
+            <div class="mb-3">
+                        <h1 class="display-6" >FeedBack</h1>
+                        <textarea 
+                        class="form-control" 
+                        id="validationTextarea"  
+                        required
+
+                        value={description}
+                        
+                        onChange={(e) => {
+                            setDescription(e.target.value);
+                        }}
+                        
+                        ></textarea>
+                        <button class="btn btnColour mt-3" onClick={addFeedback}>FeedBack</button>
+                    </div>
+
+            </div>
         </div>
     )
 }
