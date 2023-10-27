@@ -30,6 +30,7 @@ export default function Navigation() {
                     <a className="navbar-brand " href="/" >
                         <img className="logo" src={logo} alt="" />
                         RIVER'S EDGE
+                        {user.firstName}
                     </a>
 
                     <button className="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
@@ -57,11 +58,11 @@ export default function Navigation() {
                             </li>
 
                             {/*if user is logged in display user name and logout, else display register and login buttons*/}
-                            {user.name ? (
+                            {user.firstName ? (
                                 <>
                                     <li className="nav-item dropdown">
                                         <a className="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                                        <BsPersonFill/> {user.name}
+                                        <BsPersonFill/> {user.firstName}
                                         </a>
                                         <div className="dropdown-menu" aria-labelledby="navbarDropdown">
                                             <a className="dropdown-item" href="/profile">Profile</a>

@@ -24,7 +24,7 @@ export default function EmployeeAdmin() {
                     <CreateEmployee/>                    
                 </TabPane>
 
-                <TabPane tab="Leave List" key="3">
+                {/* <TabPane tab="Leave List" key="3">
                     <LeaveList/>
                 </TabPane>
 
@@ -38,7 +38,7 @@ export default function EmployeeAdmin() {
 
                 <TabPane tab="Edit Leave" key="6">
                     <AdminEditLeave/>
-                </TabPane>
+                </TabPane> */}
 
             </Tabs>
         </div>

@@ -5,19 +5,22 @@ import Error from "../components/Error";
 import Success from '../components/Success';
 
 function RegisterScreen() {
-  const[name, setName]                = useState('')
+  const[firstName, setFirstName]      = useState('')
+  const[lastName, setLastName]        = useState('')
+  const[phoneNumber, setPhoneNumber]  = useState('')
   const[email, setEmail]              = useState('')
   const[password, setPassword]        = useState('')
   const[confirmPass, setconfirmPass]  = useState('')
-
-  const [loading, setLoading]   = useState(false)
-  const [error, setError]       = useState()
-  const [success,setSuccess]    = useState()
+  const [loading, setLoading]         = useState(false)
+  const [error, setError]             = useState()
+  const [success,setSuccess]          = useState()
 
   async function register(){
     if (password === confirmPass) {
         const user= {
-        name,
+        firstName,
+        lastName,
+        phoneNumber,
         email,
         password,
         confirmPass
@@ -30,7 +33,9 @@ function RegisterScreen() {
         setSuccess(true)//and display success
         
         //set input feilds empty after registration
-        setName('')
+        setFirstName('')
+        setLastName('')
+        setPhoneNumber('')
         setEmail('')
         setPassword('')
         setconfirmPass('')
@@ -56,8 +61,14 @@ function RegisterScreen() {
           <div className='bs'>
 
             <h2>Register</h2>
-            <input type="text" className='form-control' placeholder='name'
-              value={name} onChange={(e) => { setName(e.target.value) }} />
+            <input type="text" className='form-control' placeholder='First Name'
+              value={firstName} onChange={(e) => { setFirstName(e.target.value) }} />
+
+              <input type="text" className='form-control' placeholder='Last Name'
+              value={lastName} onChange={(e) => { setLastName(e.target.value) }} />
+
+              <input type="text" className='form-control' placeholder='Phone number'
+              value={phoneNumber} onChange={(e) => { setPhoneNumber(e.target.value) }} />
 
             <input type="text" className='form-control' placeholder='email'
               value={email} onChange={(e) => { setEmail(e.target.value) }} />

@@ -32,8 +32,10 @@ export default function Sidebarr() {
                     </Link>
                 </div>
 
-                <div className="nav-button" style={{marginLeft:'55px'}}>                    
+                <div className="nav-button" style={{marginLeft:'55px'}}>    
+                <Link to='/user'> 
                     <span><BsPersonFill/>USERS</span>
+                    </Link>
                 </div>
 
                 <hr />

@@ -21,7 +21,7 @@ export default function InventoryAdmin() {
                     <CreateInventory/>
                 </TabPane>
 
-                <TabPane tab="Leave List" key="3">
+                {/* <TabPane tab="Leave List" key="3">
 
                 </TabPane>
 
@@ -35,7 +35,7 @@ export default function InventoryAdmin() {
 
                 <TabPane tab="Edit Leave" key="6">
 
-                </TabPane>
+                </TabPane> */}
 
             </Tabs>
         </div>

@@ -29,12 +29,7 @@ export default function Profilescreen() {
         <div className='ml-3 mt-3'>
             <Tabs defaultActiveKey='1'>
                 <TabPane tab="Profile" key="1">
-                    <h1>My Profile</h1>
-                    <br />
-
-                    <h1><b>Name : </b> {user.name} </h1>
-                    <h1><b>Email : </b> {user.email} </h1>
-                    <h1><b>isAdmin : </b> {user.isAdmin ? 'YES' : 'NO'} </h1>
+                    <Userprofile/>
                 </TabPane>
                 <TabPane tab="Bookings" key="2">
                     <MyBookings />
@@ -125,6 +120,51 @@ function MyBookings() {
                     }))}
 
                 </div>
+            </div>
+        </div>
+    )
+}
+
+
+function Userprofile(){
+    const user = JSON.parse(localStorage.getItem("currentUser"))
+
+    //check user login or not
+    useEffect(() => {
+
+        if (!user) {
+            window.location.href = '/login'
+        }
+
+    })
+    return(
+        <div class="jumbotron jumbotron-fluid">
+            <div class="container">
+                <h1 class="display-2">Profile</h1>
+                    <br />
+
+                    <table>
+                        <tr>
+                            <th></th>
+                            <th></th>
+                        </tr>
+                        <tr>
+                            <td><h1 class="display-6"> <b>First Name </b>  </h1></td>
+                            <td><h1>:{user.firstName}</h1></td>
+                        </tr>
+                        <tr>
+                            <td><h1 class="display-6"> <b>Last Name </b>  </h1></td>
+                            <td><h1>:{user.lastName}</h1></td>
+                        </tr>
+                        <tr>
+                            <td><h1 class="display-6"> <b>Phone Number</b>  </h1></td>
+                            <td><h1>:{user.phoneNumber}</h1></td>
+                        </tr>
+                        <tr>
+                            <td><h1 class="display-6"> <b>Email</b>  </h1></td>
+                            <td><h1>:{user.email}</h1></td>
+                        </tr>
+                    </table>
             </div>
         </div>
     )

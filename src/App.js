@@ -24,6 +24,7 @@ import UpdateEventScreen from "./screens/update/UpdateEventScreen";
 import EventHomescreen from "./screens/eventManagment/EventHomescreen";
 import EmployeeAdmin from "./Admin/EmployeeAdmin";
 import InventoryAdmin from "./Admin/InventoryAdmin";
+import UserAdmin from "./Admin/UserAdmin";
 
 
 export const URL = "http://localhost:5000"; 
@@ -53,10 +54,8 @@ function App() {
 
           <Route path="/employee" element={<EmployeeAdmin />} />
           <Route path="/inventory" element={<InventoryAdmin />} />
-          
+          <Route path="/user" element={<UserAdmin />} />
 
-          
-          
 
           <Route path="/book/:roomid/:fromdate/:todate" element={<Bookingscreen />} />
           <Route path="/payment/:roomid/:fromdate/:todate/:totalamount/:userID/:userName/:totaldays/:email" element={<Paymentscreen />} />

@@ -19,7 +19,7 @@ function Bookingscreen() {
 
 
     // Parse user information from localStorage
-    const userName  = JSON.parse(localStorage.getItem('currentUser')).name
+    const userName  = JSON.parse(localStorage.getItem('currentUser')).firstName
     const userID    = JSON.parse(localStorage.getItem('currentUser'))._id
     const email     = JSON.parse(localStorage.getItem('currentUser')).email
 
