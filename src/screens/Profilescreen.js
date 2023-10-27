@@ -7,6 +7,7 @@ import Swal from 'sweetalert2'
 import { Tag } from 'antd';
 import Aos from 'aos'
 import 'aos/dist/aos.css'
+import { Link } from "react-router-dom"
 
 export default function Profilescreen() {
 
@@ -164,8 +165,19 @@ function Userprofile(){
                             <td><h1 class="display-6"> <b>Email</b>  </h1></td>
                             <td><h1>:{user.email}</h1></td>
                         </tr>
+<br />
+                        <tr>
+                            <td>
+                                <Link to={`/userUpdate/${user._id}`}>
+                                    <button class="btn btnColour">Update Profile</button>
+                                </Link>
+                            </td>                            
+                        </tr>
                     </table>
+
+
             </div>
+
         </div>
     )
 }

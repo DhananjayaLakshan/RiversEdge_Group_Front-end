@@ -1,6 +1,8 @@
 import React from "react";
 import logo from '../img/logo.png'
 import { BsPersonFill } from "react-icons/bs";
+import { Link } from "react-router-dom"
+
 export default function Navigation() {
     // get user name from currentUser
     const userString = localStorage.getItem('currentUser');
@@ -65,7 +67,9 @@ export default function Navigation() {
                                         <BsPersonFill/> {user.firstName}
                                         </a>
                                         <div className="dropdown-menu" aria-labelledby="navbarDropdown">
-                                            <a className="dropdown-item" href="/profile">Profile</a>
+                                            
+                                                <a className="dropdown-item" href="/profile">Profile</a>
+                                            
                                             {content}
                                             <a className="dropdown-item" href="#" onClick={logout}>Logout</a>
                                         </div>
