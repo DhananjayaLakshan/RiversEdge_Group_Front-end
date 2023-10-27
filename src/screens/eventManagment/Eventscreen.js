@@ -17,7 +17,7 @@ export default function Eventscreen() {
 
 
     return (
-        <div className="mt-3 ml-3 mr-3 bs" style={{ backgroundColor: "#FCF9EF", height: '100vh' }}>
+        <div className="mt-3 ml-3 mr-3 bs" style={{ backgroundColor: "#FCF9EF", height: '150vh' }}>
 
             <Sidebarr />
             <Tabs defaultActiveKey="1" style={{ display: 'flex', marginLeft: '300px' }}>

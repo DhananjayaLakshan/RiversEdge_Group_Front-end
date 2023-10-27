@@ -163,7 +163,7 @@ function PayScreen() {
             ) : (
                 <>
                     <Sidebarr />
-                    <div className="col-md-10 " style={{ marginLeft: '250px' }}>
+                    <div className="col-md-10 " style={{ marginLeft: '250px' , height:'150vh'}}>
 
 
                         <div className="title ">
