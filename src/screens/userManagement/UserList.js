@@ -1,7 +1,9 @@
 import React, { useEffect, useState } from "react"
 import Loader from "../../components/Loader"
 import axios from "axios"
-
+import jsPDF from 'jspdf';
+import 'jspdf-autotable';
+import { UilFileGraph } from '@iconscout/react-unicons'
 
 export default function UserList() {
     // State variables to store users data, loading state, and errors
@@ -32,6 +34,25 @@ export default function UserList() {
         fetchUsers(); // Call the async function here
     }, []);
 
+    const generatePdfReport = () => {
+        // Create a new jsPDF instance
+        const doc = new jsPDF();
+
+        // Define the columns and rows for the PDF table
+        const columns = ["UserID", "First Name", "Last Name", "Phone Number", "Email", "Is Admin"];
+        const rows = users.map(user => [user._id, user.firstName, user.lastName, user.phoneNumber, user.email, user.isAdmin ? "YES" : "NO"]);
+
+        // Add the table to the PDF document
+        doc.autoTable({
+            head: [columns],
+            body: rows,
+        });
+
+        // Save the PDF with a unique name (e.g., timestamp)
+        const fileName = `user-report-${Date.now()}.pdf`;
+        doc.save(fileName);
+    };
+
     // Render the users data in a table
     return (
         <div className="row">
@@ -46,6 +67,14 @@ export default function UserList() {
             >Users</h1>
                 <br />
                 {loading && <Loader />}
+
+                <button
+                    onClick={generatePdfReport}
+                    className="btn btnColour mb-3 ml-3"
+                >
+                    <UilFileGraph />
+                    Generate PDF Report
+                </button>
 
                 <table
                     class="table table-bordered"

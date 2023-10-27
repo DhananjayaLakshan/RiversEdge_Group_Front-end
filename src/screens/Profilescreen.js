@@ -143,8 +143,8 @@ function Userprofile(){
 
     let [firstName, setfirstName]     = useState(user.firstName)
     const [description, setDescription]     = useState("")
-   console.log(firstName);
-   console.log(description);
+    console.log(firstName);
+    console.log(description);
 
     async function addFeedback(e) {
         e.preventDefault
