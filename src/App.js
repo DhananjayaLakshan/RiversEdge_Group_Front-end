@@ -22,6 +22,8 @@ import Updatepay from "./screens/utilityManagement/Updatepay";
 import Eventscreen from "./screens/eventManagment/Eventscreen";
 import UpdateEventScreen from "./screens/update/UpdateEventScreen";
 import EventHomescreen from "./screens/eventManagment/EventHomescreen";
+import EmployeeAdmin from "./Admin/EmployeeAdmin";
+import InventoryAdmin from "./Admin/InventoryAdmin";
 
 
 export const URL = "http://localhost:5000"; 
@@ -48,6 +50,12 @@ function App() {
           <Route path="/service" element={<ServiceScreen />} />
           <Route path="/packages" element={<PackagesScreen />} />
           <Route path="/eventHome" element={<EventHomescreen />} />
+
+          <Route path="/employee" element={<EmployeeAdmin />} />
+          <Route path="/inventory" element={<InventoryAdmin />} />
+          
+
+          
           
 
           <Route path="/book/:roomid/:fromdate/:todate" element={<Bookingscreen />} />

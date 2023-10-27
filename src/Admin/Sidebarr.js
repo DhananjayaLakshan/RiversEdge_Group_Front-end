@@ -27,8 +27,8 @@ export default function Sidebarr() {
                 </div>
 
                 <div className="nav-button" style={{marginLeft:'55px'}}>
-                <Link to='/event'> 
-                    <span><BsBookmarkStarFill/>EVENTS</span>
+                    <Link to='/event'> 
+                        <span><BsBookmarkStarFill/>EVENTS</span>
                     </Link>
                 </div>
 
@@ -39,17 +39,21 @@ export default function Sidebarr() {
                 <hr />
 
                 <div className="nav-button" style={{marginLeft:'55px'}}>   
-                <Link to='/payment'>                   
-                    <span><BsGraphDown/>UTILITY</span>
+                    <Link to='/payment'>                   
+                        <span><BsGraphDown/>UTILITY</span>
                     </Link>
                 </div>
 
                 <div className="nav-button" style={{marginLeft:'55px'}}>
+                <Link to='/inventory'> 
                     <span><BsStack/>INVENTORY</span>
+                </Link>
                 </div>
 
                 <div className="nav-button" style={{marginLeft:'55px'}}>
-                    <span><BsPeopleFill/>EMPLOYEE</span>
+                    <Link to='/employee'>
+                        <span><BsPeopleFill/>EMPLOYEE</span>
+                    </Link>
                 </div>
 
                 <div className="nav-button" style={{marginLeft:'55px'}}>
