@@ -192,6 +192,41 @@ function Userprofile() {
 
 
     //add feed back
+    async function deleteRoom(roomID) {
+        try {
+            const result = await Swal.fire({
+                title: "Are you sure?",
+                text: "",
+                icon: "question",
+                showCancelButton: true,
+                confirmButtonColor: "#3085d6",
+                cancelButtonColor: "#d33",
+                confirmButtonText: "Yes, delete it!",
+            });
+
+            if (result.isConfirmed) {
+
+                // Send the delete request with the proper URL and data
+                const response = await axios.delete(`/api/feedback/deleteFeedback/${roomID}`);
+
+                if (response.status === 200) {
+
+                    // Show success message
+                    Swal.fire("Deleted", "Deleted Successfully", "success").then(
+                        // Reload the page
+                        (result) => window.location.reload()
+                    );
+
+                } else {
+                    // Handle unexpected response status here
+                    Swal.fire("Oops!!", "Something went wrong", "error");
+                }
+            }
+        } catch (error) {
+            console.error(error);
+            Swal.fire("Oops!!", "Something went wrong", "error");
+        }
+    }
 
 
     return (
@@ -293,6 +328,7 @@ function Userprofile() {
                                             <button
                                                 className="btn ml-2"
                                                 style={{ backgroundColor: "#3B362E"}}
+                                                onClick={()=>deleteRoom(feed._id)}
 
                                             >
                                                 <UilTrashAlt />
