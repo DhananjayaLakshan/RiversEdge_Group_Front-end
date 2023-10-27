@@ -2,6 +2,7 @@ import React from "react"
 import { Tabs } from "antd"
 import Sidebarr from "./Sidebarr"
 import UserList from "../screens/userManagement/UserList"
+import FeedbackList from "../screens/userManagement/FeedbackList"
 const { TabPane } = Tabs
 
 
@@ -18,7 +19,7 @@ export default function UserAdmin() {
                 </TabPane>
 
                 <TabPane tab="FeedBack" key="2">
-                    
+                    <FeedbackList/>
                 </TabPane>
 
 

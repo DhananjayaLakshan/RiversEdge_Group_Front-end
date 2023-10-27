@@ -2,24 +2,23 @@ import React, { useEffect, useState } from "react"
 import Loader from "../../components/Loader"
 import axios from "axios"
 
-
-export default function UserList() {
+export default function FeedbackList() {
     // State variables to store users data, loading state, and errors
-    const [users, setUsers] = useState([]);
+    const [feedback, setFeedback] = useState([]);
     const [loading, setLoading] = useState(false);
     const [error, setError] = useState(null);
 
     // useEffect to fetch users data when the component mounts
     useEffect(() => {
-        async function fetchUsers() {
+        async function fetchFeedback() {
             try {
                 setLoading(true);
 
                 // Fetch users data from the server
-                const response = await axios.get("/api/users/getallusers");
+                const response = await axios.get("/api/feedback/display");
 
                 // Set the users data in the state
-                setUsers(response.data);
+                setFeedback(response.data);
 
                 setLoading(false);
             } catch (error) {
@@ -29,7 +28,7 @@ export default function UserList() {
             }
         }
 
-        fetchUsers(); // Call the async function here
+        fetchFeedback(); // Call the async function here
     }, []);
 
     // Render the users data in a table
@@ -43,7 +42,7 @@ export default function UserList() {
                 fontWeight: "bold",
                 
             }}
-            >Users</h1>
+            >Feedback</h1>
                 <br />
                 {loading && <Loader />}
 
@@ -53,25 +52,21 @@ export default function UserList() {
                 >
                     <thead style={{ backgroundColor: "#FCF9EF" }}>
                         <tr>
-                            <th scope="col">UserID</th>
+                            
                             <th scope="col">First Name</th>
-                            <th scope="col">Last Name</th>
-                            <th scope="col">Phone Number</th>
-                            <th scope="col">Email</th>
-                            <th scope="col">Is Admin</th>
+                            <th scope="col">FeedBack</th>
+                            
                         </tr>
                     </thead>
                     <tbody style={{ backgroundColor: "#E9E3D3" }}>
-                        {users.length &&
-                            users.map((user) => {
+                        {feedback.length &&
+                            feedback.map((feed) => {
                                 return (
                                     <tr>
-                                        <td>{user._id}</td>
-                                        <td>{user.firstName}</td>
-                                        <td>{user.lastName}</td>
-                                        <td>{user.phoneNumber}</td>
-                                        <td>{user.email}</td>
-                                        <td>{user.isAdmin ? "YES" : "NO"}</td>
+                                        
+                                        <td>{feed.firstName}</td>
+                                        <td>{feed.description}</td>
+                                        
                                     </tr>
                                 );
                             })}
