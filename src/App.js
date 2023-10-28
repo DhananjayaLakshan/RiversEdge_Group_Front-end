@@ -26,6 +26,7 @@ import EmployeeAdmin from "./Admin/EmployeeAdmin";
 import InventoryAdmin from "./Admin/InventoryAdmin";
 import UserAdmin from "./Admin/UserAdmin";
 import UserUpdateScreen from "./screens/userManagement/UserUpdateScreen";
+import FeedBackUpdate from "./screens/userManagement/FeedBackUpdate";
 
 
 export const URL = "http://localhost:5000"; 
@@ -57,6 +58,8 @@ function App() {
           <Route path="/inventory" element={<InventoryAdmin />} />
           <Route path="/user" element={<UserAdmin />} />
           <Route path="/userUpdate/:userid" element={<UserUpdateScreen />} />
+          <Route path="/updatefeedback/:id" element={<FeedBackUpdate />} />
+
          
 
 

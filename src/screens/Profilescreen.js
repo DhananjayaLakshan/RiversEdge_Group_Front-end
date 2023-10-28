@@ -228,6 +228,8 @@ function Userprofile() {
         }
     }
 
+    let id
+
 
     return (
         <div class="jumbotron-fluid center bs" style={{ display: 'flex', alignItems: 'center', width: '80%', }}>
@@ -314,22 +316,22 @@ function Userprofile() {
                             feedback.map((feed) => {
                                 return (
                                     <tr>
-
+                                        <td style={{display:'none'}}>{id = feed._id} </td>
                                         <td>{feed.description}</td>
                                         <td>
-                                            <button
-
-                                                className="btn"
-                                                style={{ backgroundColor: "#9B804E"}}
-                                            >
-                                                <UilEdit />
-                                            </button>
+                                            <Link to={`/updatefeedback/${id}`}>
+                                                <button
+                                                    className="btn"
+                                                    style={{ backgroundColor: "#9B804E"}}
+                                                >
+                                                    <UilEdit />
+                                                </button>
+                                            </Link>
 
                                             <button
                                                 className="btn ml-2"
                                                 style={{ backgroundColor: "#3B362E"}}
                                                 onClick={()=>deleteRoom(feed._id)}
-
                                             >
                                                 <UilTrashAlt />
                                             </button>
