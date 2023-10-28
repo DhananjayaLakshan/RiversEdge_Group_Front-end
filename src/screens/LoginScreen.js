@@ -51,7 +51,7 @@ function LoginScreen() {
                         <input type="text" className='form-control' placeholder='email'
                             value={email} onChange={(e) => { setEmail(e.target.value) }} />
 
-                        <input type="text" className='form-control' placeholder='password'
+                        <input type="password" className='form-control' placeholder='password'
                             value={password} onChange={(e) => { setPassword(e.target.value) }} />
 
                         <button className='btn mt-3' onClick={login}>Login</button>
