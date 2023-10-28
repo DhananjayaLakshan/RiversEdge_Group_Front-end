@@ -6,6 +6,8 @@ import Swal from "sweetalert2"
 import { Link } from "react-router-dom"
 import { UilTrashAlt, UilEdit, UilFileGraph } from '@iconscout/react-unicons'
 import Sidebarr from "../../Admin/Sidebarr"
+import jsPDF from 'jspdf';
+import 'jspdf-autotable';
 import Aos from 'aos'
 const { TabPane } = Tabs
 
@@ -51,7 +53,17 @@ export function EventsResevations() {
     const [events, setEvents] = useState([]);
     const [loading, setLoading] = useState(false);
     const [error, setError] = useState(null);
+    const [duplicateEvent, setdublicateEvent] = useState([])
+    const [searchkey, setsearchkey] = useState('')
 
+    function filterBySearch() {
+
+        const tempEvent = duplicateEvent.filter((even) =>
+            even.userName.toLowerCase().includes(searchkey.toLowerCase())
+        )
+
+        setEvents(tempEvent)
+    }
 
 
     useEffect(() => {
@@ -61,6 +73,7 @@ export function EventsResevations() {
                 const response = await axios.get("/api/eventres/display");
 
                 setEvents(response.data);
+                setdublicateEvent(response.data)
                 setLoading(false);
             } catch (error) {
                 console.error(error);
@@ -71,6 +84,39 @@ export function EventsResevations() {
 
         fetchEvents();
     }, []);
+
+    const generatePdfReport = () => {
+        const doc = new jsPDF();
+
+        doc.setFontSize(16);
+        doc.text("Event Reservations Report", 10, 15);
+
+        // Define the table columns and data
+        const columns = ["User Name", "Phone", "Num of Tickets", "Total Price"];
+        const data = events.map((event) => [
+            event.userName,
+            event.userPhone,
+            event.numOfTickets,
+            `Rs.${event.totalAmount}.00`,
+        ]);
+
+        // Set the position for the table
+        const leftMargin = 10;
+
+        doc.autoTable({
+            head: [columns],
+            body: data,
+            startY: 20,
+            theme: 'grid',
+            tableWidth: 'auto',
+            margin: { left: leftMargin },
+        });
+
+        // Save the PDF with a unique name
+        const currentDate = new Date();
+        const fileName = `Event_Reservations_Report_${currentDate.toISOString()}.pdf`;
+        doc.save(fileName);
+    };
 
 
 
@@ -87,6 +133,27 @@ export function EventsResevations() {
                 >Event Reservations</h1>
                 <br />
                 {loading && <Loader />}
+
+                <button
+                    onClick={generatePdfReport}
+                    className="btn btnColour mb-3 ml-3"
+                >
+                    <UilFileGraph />
+                    Generate PDF Report
+                </button>
+
+                <div className="col-md-3 center">
+                    <input
+                        type="text"
+                        className="form-control"
+                        placeholder="search by user name"
+                        value={searchkey}
+                        onChange={(e) => {
+                            setsearchkey(e.target.value)
+                        }}
+                        onKeyUp={filterBySearch}
+                    />
+                </div>
 
 
 
@@ -129,6 +196,9 @@ export function Events() {
     const [events, setEvents] = useState([]);
     const [loading, setLoading] = useState(false);
     const [error, setError] = useState(null);
+    const [duplicateEvent, setdublicateEvent] = useState([])
+    const [searchkey, setsearchkey] = useState('')
+
 
     useEffect(() => {
         async function fetchEvent() {
@@ -138,6 +208,9 @@ export function Events() {
                 const response = await axios.get("/api/event/display");
 
                 setEvents(response.data);
+                setdublicateEvent(response.data);
+
+
                 setLoading(false);
             } catch (error) {
                 console.error(error);
@@ -148,6 +221,43 @@ export function Events() {
 
         fetchEvent();
     }, []);
+
+    const generatePdfReport = () => {
+        // Create a new PDF document
+        const doc = new jsPDF();
+
+        // Define the table columns and data
+        const columns = ["Event Name", "Event Date", "Num of Tickets", "Ticket Price", "Details"];
+        const data = events.map((event) => [
+            event.eventName,
+            event.eventDate,
+            event.numOfTickets,
+            `Rs.${event.ticketPrice}.00`,
+            event.moreDetails,
+        ]);
+
+        // Set the position for the table (left margin)
+        const leftMargin = 10;
+
+        // Add a title to the report
+        doc.setFontSize(16);
+        doc.text("Event Report", leftMargin, 15);
+
+        // Create the table with the provided data
+        doc.autoTable({
+            head: [columns],
+            body: data,
+            startY: 20, // Start position (top margin)
+            theme: 'grid', // Use 'striped', 'grid', or other themes
+            tableWidth: 'auto', // 'auto', 'wrap', 'match', 'fill', or a number
+            margin: { left: leftMargin },
+        });
+
+        // Save the PDF with a unique name
+        const currentDate = new Date();
+        const fileName = `Event_Report_${currentDate.toISOString()}.pdf`;
+        doc.save(fileName);
+    };
 
 
     async function deleteEvent(id) {
@@ -192,6 +302,15 @@ export function Events() {
         }
     }
 
+    function filterBySearch() {
+
+        const tempEvent = duplicateEvent.filter((even) =>
+            even.eventName.toLowerCase().includes(searchkey.toLowerCase())
+        )
+
+        setEvents(tempEvent)
+    }
+
     // Variables to store event details
     let eventId
     let eventName
@@ -217,13 +336,34 @@ export function Events() {
 
                 {loading && <Loader />}
 
+                <button
+                    onClick={generatePdfReport}
+                    className="btn btnColour mb-3 ml-3"
+                >
+                    <UilFileGraph />
+                    Generate PDF Report
+                </button>
+
+                <div className="col-md-3 center">
+                    <input
+                        type="text"
+                        className="form-control"
+                        placeholder="search by event name"
+                        value={searchkey}
+                        onChange={(e) => {
+                            setsearchkey(e.target.value)
+                        }}
+                        onKeyUp={filterBySearch}
+                    />
+                </div>
+
                 <table
                     class="table table-bordered"
                     style={{ border: "solid 2px #C2BDB8" }}
                 >
                     <thead style={{ backgroundColor: "#FCF9EF" }}>
                         <tr>
-                            
+
                             <th scope="col">Event Name</th>
                             <th scope="col">Event Date</th>
                             <th scope="col">Num of Tickets</th>
@@ -237,7 +377,7 @@ export function Events() {
                             events.map((event) => {
                                 return (
                                     <tr>
-                                        <td style={{display:'none'}}>{(eventId = event._id)}</td>
+                                        <td style={{ display: 'none' }}>{(eventId = event._id)}</td>
                                         <td scope="col">{(eventName = event.eventName)}</td>
                                         <td scope="col">{(eventDate = event.eventDate)}</td>
                                         <td scope="col">{(numOfTickets = event.numOfTickets)}</td>
@@ -297,7 +437,7 @@ export function AddEvents() {
 
         e.preventDefault()
 
-        const newEvent ={
+        const newEvent = {
             eventName,
             eventDate,
             numOfTickets,
@@ -308,7 +448,7 @@ export function AddEvents() {
         try {
 
             setLoading(true);
-            
+
 
             const result = axios.post("/api/event/addevent", newEvent);
 

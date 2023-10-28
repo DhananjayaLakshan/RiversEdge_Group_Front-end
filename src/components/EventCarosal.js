@@ -23,7 +23,7 @@ export default function EventCarosal({img1,img2,img3}) {
             <div className="carousel-item active">
                 <img className="caro" src={img1} alt="" />
                 <div className="carousel-caption d-none d-md-block" data-aos="flip-down">
-                    <h5 style={{fontSize:'50PX'}}>Where Luxury Meets Nature's Symphony</h5>
+                    <h5 style={{fontSize:'50PX'}}>Accoustic Party</h5>
                     <p >Discover serenity at River's Edge, a haven where opulent luxury seamlessly blends with the soothing 
                         melody of nature's beauty.</p>
                 </div>
@@ -31,13 +31,13 @@ export default function EventCarosal({img1,img2,img3}) {
             <div className="carousel-item">
                 <img src={img2} alt="" />
                 <div className="carousel-caption d-none d-md-block">    
-                    <h5 style={{fontSize:'50PX'}}>Luxury Rooms</h5>                       
+                    <h5 style={{fontSize:'50PX'}}>Dj With Dinner</h5>                       
                 </div>
             </div>
             <div className="carousel-item">
                 <img src={img3} alt="" />
                 <div className="carousel-caption d-none d-md-block">
-                    <h5 style={{fontSize:'50PX'}}>Great View</h5>                        
+                    <h5 style={{fontSize:'50PX'}}>Special Events </h5>                        
                 </div>
             </div>
         </div>
