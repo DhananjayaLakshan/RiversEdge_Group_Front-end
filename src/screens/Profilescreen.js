@@ -147,7 +147,6 @@ function Userprofile() {
 
 
     async function addFeedback(e) {
-        e.preventDefault
 
         const newFeedback = {
             firstName,
@@ -193,7 +192,7 @@ function Userprofile() {
 
     //add feed back
     async function deleteRoom(roomID) {
-        
+
         try {
             const result = await Swal.fire({
                 title: "Are you sure?",

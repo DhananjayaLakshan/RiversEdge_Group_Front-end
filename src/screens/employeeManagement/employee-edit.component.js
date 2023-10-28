@@ -172,7 +172,7 @@ export default class  EditEmployee extends Component {
                                                         value={this.state.empId}
                                                         onChange={this.onChangeEmpID}
 
-                                                    /> <p className="block text-lg font-medium text-red-900 dark:text-white">{this.state.empIDError}</p>
+                                                    /> <p className="block text-lg font-medium text-red-900 dark:text-white" style={{color:'red'}}>{this.state.empIDError}</p>
                                                 </div>
                                                 <div className="form-group">
                                                     <label className='block mb-2 text-lg font-medium text-gray-900 dark:text-white' >First Name</label>
@@ -181,7 +181,7 @@ export default class  EditEmployee extends Component {
                                                         className="form-control"
                                                         value={this.state.firstName}
                                                         onChange={this.onChangeFirstName}
-                                                    /><p className="block text-lg font-medium text-red-900 dark:text-white">{this.state.firstNameError}</p>
+                                                    /><p className="block text-lg font-medium text-red-900 dark:text-white" style={{color:'red'}}>{this.state.firstNameError}</p>
                                                 </div>
                                                 <div className="form-group">
                                                     <label className='block mb-2 text-lg font-medium text-gray-900 dark:text-white' >Last Name</label>
@@ -190,7 +190,7 @@ export default class  EditEmployee extends Component {
                                                         className="form-control"
                                                         value={this.state.lastName}
                                                         onChange={this.onChangeLastName}
-                                                    /><p className="block text-lg font-medium text-red-900 dark:text-white">{this.state.lastNameError}</p>
+                                                    /><p className="block text-lg font-medium text-red-900 dark:text-white" style={{color:'red'}}>{this.state.lastNameError}</p>
                                                 </div>
                                             </div>
                                             <div class="grid grid-cols-2 gap-4 form-group">
@@ -202,7 +202,7 @@ export default class  EditEmployee extends Component {
                                                         value={this.state.phoneNumber}
                                                         onChange={this.onChangePhoneNumber}
                                                     />
-                                                    <p className="block text-lg font-medium text-red-900 dark:text-white">{this.state.phoneNoError}</p>
+                                                    <p className="block text-lg font-medium text-red-900 dark:text-white" style={{color:'red'}}>{this.state.phoneNoError}</p>
                                                 </div>
                                                 <div className="form-group">
                                                     <label className='block mb-2 text-lg font-medium text-gray-900 dark:text-white'>Position</label>
@@ -212,7 +212,7 @@ export default class  EditEmployee extends Component {
                                                         value={this.state.position}
                                                         onChange={this.onChangePosition}
                                                     />
-                                                    <p className="block text-lg font-medium text-red-900 dark:text-white">{this.state.positionError}</p>
+                                                    <p className="block text-lg font-medium text-red-900 dark:text-white" style={{color:'red'}}>{this.state.positionError}</p>
                                                 </div>
                                             </div>
                                             <div className="grid grid-cols-3 gap-4 form-group">
@@ -224,7 +224,7 @@ export default class  EditEmployee extends Component {
                                                     value={this.state.salary}
                                                     onChange={this.onChangeSalary}
                                                 />
-                                                <p className="block text-lg font-medium text-red-900 dark:text-white">{this.state.salaryError}</p>
+                                                <p className="block text-lg font-medium text-red-900 dark:text-white" style={{color:'red'}}>{this.state.salaryError}</p>
 
                                                 </div>
                                                 <div className="form-group">
@@ -244,7 +244,7 @@ export default class  EditEmployee extends Component {
                                                         value={this.state.age}
                                                         onChange={this.onChangeAge}
                                                     />
-                                                    <p className="block text-lg font-medium text-red-900 dark:text-white">{this.state.ageError}</p>
+                                                    <p className="block text-lg font-medium text-red-900 dark:text-white" style={{color:'red'}}>{this.state.ageError}</p>
                                                 </div>
                                                 <p />
 
