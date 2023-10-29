@@ -118,7 +118,7 @@ export default function Navigation() {
                             <a className="nav-link" href="/service"><span className="navBarDown">Services</span></a>
                         </li>
                         <li className="nav-item mr-4 ">
-                            <a className="nav-link" href="#"><span className="navBarDown">Food & bevarage</span></a>
+                            <a className="nav-link" href="/menu"><span className="navBarDown">Food & bevarage</span></a>
                         </li>
                     </ul>
                 </div>

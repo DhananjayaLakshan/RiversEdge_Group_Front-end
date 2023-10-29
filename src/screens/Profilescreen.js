@@ -36,6 +36,12 @@ export default function Profilescreen() {
                 <TabPane tab="Bookings" key="2">
                     <MyBookings />
                 </TabPane>
+                <TabPane tab="Event Reservations" key="3">
+                    <EventRes />
+                </TabPane>
+                <TabPane tab="Food Orders" key="4">
+                    <FoodOrders />
+                </TabPane>
             </Tabs>
 
         </div>
@@ -316,13 +322,13 @@ function Userprofile() {
                             feedback.map((feed) => {
                                 return (
                                     <tr>
-                                        <td style={{display:'none'}}>{id = feed._id} </td>
+                                        <td style={{ display: 'none' }}>{id = feed._id} </td>
                                         <td>{feed.description}</td>
                                         <td>
                                             <Link to={`/updatefeedback/${id}`}>
                                                 <button
                                                     className="btn"
-                                                    style={{ backgroundColor: "#9B804E"}}
+                                                    style={{ backgroundColor: "#9B804E" }}
                                                 >
                                                     <UilEdit />
                                                 </button>
@@ -330,8 +336,8 @@ function Userprofile() {
 
                                             <button
                                                 className="btn ml-2"
-                                                style={{ backgroundColor: "#3B362E"}}
-                                                onClick={()=>deleteRoom(feed._id)}
+                                                style={{ backgroundColor: "#3B362E" }}
+                                                onClick={() => deleteRoom(feed._id)}
                                             >
                                                 <UilTrashAlt />
                                             </button>
@@ -346,4 +352,227 @@ function Userprofile() {
             </div>
         </div>
     )
+}
+
+function FoodOrders() {
+    const user = JSON.parse(localStorage.getItem("currentUser"))
+    const [orders, setOrders] = useState([]);
+    const [loading, setLoading] = useState(false)
+    const [error, setError] = useState()
+
+    useEffect(() => {
+        const fetchBookings = async () => {
+            try {
+                setLoading(true)
+                const response = await axios.post('api/order/getorderbyuserid', { userid: user._id });
+                setOrders(response.data);
+                setLoading(false)
+
+            } catch (error) {
+                console.error(error);
+                setLoading(false)
+                setError(error)
+
+            }
+        };
+
+        fetchBookings();
+    }, [user._id]);
+
+    async function deleteOrder(id) {
+
+        console.log(id);
+
+        try {
+            const result = await Swal.fire({
+                title: "Are you sure?",
+                text: "",
+                icon: "question",
+                showCancelButton: true,
+                confirmButtonColor: "#3085d6",
+                cancelButtonColor: "#d33",
+                confirmButtonText: "Yes, delete it!",
+            });
+
+            if (result.isConfirmed) {
+                setLoading(true);
+
+                // Send the delete request with the proper URL and data
+                const response = await axios.delete(`/api/order/delete/${id}`);
+
+                if (response.status === 200) {
+
+                    // Show success message
+                    Swal.fire("Deleted", "Deleted Successfully", "success").then(
+                        // Reload the page
+                        (result) => window.location.reload()
+                    );
+
+                } else {
+                    // Handle unexpected response status here
+                    Swal.fire("Oops!!", "Something went wrong", "error");
+                }
+            }
+        } catch (error) {
+            console.error(error);
+            setLoading(false);
+            setError(error);
+            Swal.fire("Oops!!", "Something went wrong", "error");
+        }
+    }
+
+
+
+    return (
+
+        <div>
+            <div className="row">
+                <div className="col-md-6" >
+
+                    {loading && <Loader />}
+                    {orders && (orders.map(order => {
+
+                        return <div data-aos="fade-up" data-aos-anchor-placement="top-bottom" className='bs mt-5 mb-5 ml-5 profileorders' style={{ backgroundColor: 'white' }}>
+
+
+                            <p><b>{order.foodItem} </b></p>
+                            <p><b>orderID : </b> {order._id} </p>
+                            <p><b>Total Bill : </b> Rs. {order.totalPrice}.00 </p>
+                            <p>
+                                <b>Status : </b>
+                                {order.status === 'Pending' ? (
+                                    <Tag color="gray">Pending</Tag>
+                                ) : order.status === 'Confirmed' ? (
+                                    <Tag color="green">CONFIRMED</Tag>
+                                ) : (
+                                    <Tag color="orange">CANCELLED</Tag>
+                                )}
+                            </p>
+
+
+
+                            <div className='text-right'>
+                                <button className='btn btnColour' onClick={() => { deleteOrder(order._id) }}>Cancel Order</button>
+                            </div>
+
+                        </div>
+
+                    }))}
+
+                </div>
+            </div>
+        </div>
+    )
+
+}
+
+function EventRes() {
+    const user = JSON.parse(localStorage.getItem("currentUser"))
+    const [reservations, setreservations] = useState([]);
+    const [loading, setLoading] = useState(false)
+    const [error, setError] = useState()
+
+    useEffect(() => {
+        const fetchBookings = async () => {
+            try {
+                setLoading(true)
+                const response = await axios.post('/api/eventres/getresbyusername', { username: user.firstName });
+                setreservations(response.data);
+                setLoading(false)
+
+                console.log(response.data);
+
+            } catch (error) {
+                console.error(error);
+                setLoading(false)
+                setError(error)
+
+            }
+        };
+
+        fetchBookings();
+    }, [user.firstName]);
+
+
+
+    async function deleteEvent(id) {
+
+        console.log(id);
+
+        try {
+            const result = await Swal.fire({
+                title: "Are you sure?",
+                text: "",
+                icon: "question",
+                showCancelButton: true,
+                confirmButtonColor: "#3085d6",
+                cancelButtonColor: "#d33",
+                confirmButtonText: "Yes, delete it!",
+            });
+
+            if (result.isConfirmed) {
+                setLoading(true);
+
+                // Send the delete request with the proper URL and data
+                const response = await axios.delete(`/api/eventres/delete/${id}`);
+
+                if (response.status === 200) {
+
+                    // Show success message
+                    Swal.fire("Deleted", "Deleted Successfully", "success").then(
+                        // Reload the page
+                        (result) => window.location.reload()
+                    );
+
+                } else {
+                    // Handle unexpected response status here
+                    Swal.fire("Oops!!", "Something went wrong", "error");
+                }
+            }
+        } catch (error) {
+            console.error(error);
+            setLoading(false);
+            setError(error);
+            Swal.fire("Oops!!", "Something went wrong", "error");
+        }
+    }
+
+
+
+
+
+    return (
+
+        <div>
+            <div className="row">
+                <div className="col-md-6">
+
+                    {loading && <Loader />}
+                    {reservations && (reservations.map(reservations => {
+
+                        return <div data-aos="fade-up" data-aos-anchor-placement="top-bottom" className='bs mt-5 mb-5 ml-5 profileorders' style={{ backgroundColor: 'white' }}>
+
+
+                            <p><b>{reservations.userName} </b></p>
+                            <p><b>Phone Number : </b> {reservations.userPhone} </p>
+                            <p><b>Number of Tickets : </b> Rs. {reservations.numOfTickets} </p>
+                            <p><b>Total Amount : </b> Rs. {reservations.totalAmount}.00 </p>
+
+
+
+                            <div className='text-right'>
+                                <button className='btn btnColour'
+                                    onClick={() => { deleteEvent(reservations._id) }}
+                                >Cancel Reservation</button>
+                            </div>
+                        </div>
+
+                    }))}
+
+                </div>
+            </div>
+        </div>
+    )
+
+
 }

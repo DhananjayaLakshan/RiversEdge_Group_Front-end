@@ -27,6 +27,10 @@ import InventoryAdmin from "./Admin/InventoryAdmin";
 import UserAdmin from "./Admin/UserAdmin";
 import UserUpdateScreen from "./screens/userManagement/UserUpdateScreen";
 import FeedBackUpdate from "./screens/userManagement/FeedBackUpdate";
+import MenuScreen from "./screens/orderManagement/MenuScreen";
+import FoodOrder from "./screens/orderManagement/FoodOrder";
+import OrderAdmin from "./Admin/OrderAdmin";
+import UpdateOrder from "./screens/orderManagement/UpdateOrder";
 
 
 export const URL = "http://localhost:5000"; 
@@ -60,7 +64,13 @@ function App() {
           <Route path="/userUpdate/:userid" element={<UserUpdateScreen />} />
           <Route path="/updatefeedback/:id" element={<FeedBackUpdate />} />
 
-         
+          <Route path="/menu" element={<MenuScreen />} />
+          <Route path="/foodOrder/:userId/:foodItem/:price" element={<FoodOrder />} />
+          <Route path="/order" element={<OrderAdmin />} />
+          <Route path="/orderUpdate/:id" element={<UpdateOrder />} />
+
+
+
 
 
           <Route path="/book/:roomid/:fromdate/:todate" element={<Bookingscreen />} />

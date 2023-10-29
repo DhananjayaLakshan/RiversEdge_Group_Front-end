@@ -121,6 +121,7 @@ export default function UserList() {
                         <th scope="col">Last Name</th>
                         <th scope="col">Phone Number</th>
                         <th scope="col">Email</th>
+                        <th scope="col">Action</th>
                     </tr>
                 </thead>
                 <tbody style={{ backgroundColor: "#E9E3D3" }}>
@@ -132,6 +133,7 @@ export default function UserList() {
                                     <td>{user.firstName}</td>
                                     <td>{user.lastName}</td>
                                     <td>{user.phoneNumber}</td>
+                                    <td>{user.email}</td>
                                     <td>{user.email}</td>
                                 </tr>
                             );

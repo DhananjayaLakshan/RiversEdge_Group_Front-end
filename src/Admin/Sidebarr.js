@@ -59,7 +59,9 @@ export default function Sidebarr() {
                 </div>
 
                 <div className="nav-button" style={{marginLeft:'55px'}}>
-                    <span><IoRestaurant/>FOOD & BEVERAGE</span>
+                    <Link to='/order'>
+                        <span><IoRestaurant/>FOOD & BEVERAGE</span>
+                    </Link>    
                 </div>
 
                 <hr />

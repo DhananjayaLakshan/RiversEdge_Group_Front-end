@@ -17,7 +17,9 @@ export default function EventCard({ event }) {
         Aos.init({ duration: 1000 });
     }, []);
 
-    const [userName, setUserName] = useState('');
+    const user = JSON.parse(localStorage.getItem("currentUser"))
+
+    const userName = user.firstName;
     const [userPhone, setUserPhone] = useState('');
     const [numOfTickets, setNumOfTickets] = useState('');
     const [totalAmount, setTotalAmount] = useState('');
@@ -26,6 +28,8 @@ export default function EventCard({ event }) {
     const [loading, setLoading] = useState(false);
     const [error, setError] = useState(null);
     const [maxCountError, setMaxCountError] = useState(null)
+
+    
 
     async function addReserve(e) {
         e.preventDefault();
@@ -86,7 +90,7 @@ export default function EventCard({ event }) {
                         <input
                             type="text"
                             className="form-control inputFeild"
-                            onChange={(e) => setUserName(e.target.value)}
+                            value={user.firstName}
                         />
                     </div>
                     <div className="form-group col-md-6">
