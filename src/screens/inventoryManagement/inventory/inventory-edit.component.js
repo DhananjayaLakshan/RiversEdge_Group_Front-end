@@ -197,9 +197,12 @@ export default class EditInventory extends Component {
                                                             onChange={this.onChangeItemCategory}
                                                         >
                                                             <option value = "null" >Select Size</option>
-                                                            <option value="cat1">Cat 1</option>
-                                                            <option value="cat2">Cat 2</option>
-                                                            <option value="cat3">Cat 3</option>
+                                                            <option value="Food">Food</option>
+                                                            <option value="Cleaning">Cleaning</option>
+                                                            <option value="Clothing">Clothing</option>
+                                                            <option value="Electric">Electric</option>
+                                                            <option value="Furniture">Furniture</option>
+                                                            <option value="Other">Other</option>
                                                         </select>
                                                         <p className="block text-lg font-medium text-red-900 dark:text-white">{this.state.itemCategoryError}</p>
                                                     </div>
