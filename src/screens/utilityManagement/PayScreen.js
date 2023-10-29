@@ -7,7 +7,7 @@ import Swal from "sweetalert2";
 import Filter from "../../components/Filter";
 import * as XLSX from 'xlsx';
 import Sidebarr from "../../Admin/Sidebarr"
-import { UilTrashAlt, UilEdit, UilFileImport, UilPlus, UilFileGraph, UilFileSearchAlt  } from '@iconscout/react-unicons'
+import { UilTrashAlt, UilEdit, UilFileImport, UilPlus, UilFileGraph, UilFileSearchAlt } from '@iconscout/react-unicons'
 
 
 
@@ -163,7 +163,7 @@ function PayScreen() {
             ) : (
                 <>
                     <Sidebarr />
-                    <div className="col-md-10 " style={{ marginLeft: '250px' , height:'150vh'}}>
+                    <div className="col-md-10 " style={{ marginLeft: '250px', height: '150vh' }}>
 
 
                         <div className="title ">
@@ -176,7 +176,7 @@ function PayScreen() {
                                 className="btn btn-primary ml-2"
                                 onClick={generateExcelReport}
                             >
-                                <UilFileGraph/>Generate Report
+                                <UilFileGraph />Generate Report
                             </button>
                             <input
                                 id="search"
@@ -192,7 +192,7 @@ function PayScreen() {
                                 className="btn btnColour btn-primary float-right"
                                 onClick={toggleFilter}
                             >
-                                <UilFileSearchAlt/> Filter
+                                <UilFileSearchAlt /> Filter
                             </button>
                         </div>
                         <div className=" float-right mr-3 mt-3" style={{ marginRight: '200px' }}>
@@ -233,9 +233,10 @@ function PayScreen() {
                                                 <td className="tdCSS">
                                                     {new Date(payment.date).toLocaleDateString()}
                                                 </td>
-                                                <td className="tdCSS">{payment.amount}</td>
-                                                <td>
+                                                <td className="tdCSS">Rs.{payment.amount}</td>
+                                                <td className="tdCSS">
                                                     <b>{payment.status}</b>
+
                                                 </td>
                                                 <td className="tdCSS">
                                                     <Link
