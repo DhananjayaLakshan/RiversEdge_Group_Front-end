@@ -243,7 +243,7 @@ function PayScreen() {
                                                         className="btnColour btn btn-primary"
                                                         to={`/view/${payment._id}`}
                                                     >
-                                                        <UilEdit />
+                                                        <UilFileImport />
                                                     </Link>
                                                 </td>
                                                 <td className="tdCSS">
@@ -259,7 +259,8 @@ function PayScreen() {
                                                         className="btnColour btn btn-primary"
                                                         to={`/update/${payment._id}`}
                                                     >
-                                                        <UilFileImport />
+                                                        <UilEdit />
+
                                                     </Link>
                                                 </td>
                                             </tr>
