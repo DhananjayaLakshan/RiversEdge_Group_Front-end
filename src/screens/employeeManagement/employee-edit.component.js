@@ -105,17 +105,17 @@ export default class  EditEmployee extends Component {
             phoneNumber: this.state.phoneNumber,
         }
         console.log(employee);
-        if (this.state.empId.length <= 5) {
-            this.setState({ empIDError: "Employee ID should be 5 characters." })
-        }else if (this.state.firstName.length <= 5) {
-            this.setState({ firstNameError: "First Name characters should be more then 5." })
-        }else if (this.state.lastName.length <= 5) {
-            this.setState({ lastNameError: "Last Name characters should be more then 5." })
+        if (this.state.empId.length != 6) {
+            this.setState({ empIDError: "Employee ID should be 6 characters." })
+        }else if (this.state.firstName.length <= 1) {
+            this.setState({ firstNameError: "First Name characters should be more then 1." })
+        }else if (this.state.lastName.length <= 1) {
+            this.setState({ lastNameError: "Last Name characters should be more then 1." })
         }else if (this.state.phoneNumber.length !== 10) {
             this.setState({ phoneNoError: "Contact Number is invalid." })
         } else if (isNaN(this.state.salary) || this.state.salary <= 0) {
             this.setState({ salaryError: "Please add a valid salary detail." })
-        } else if (this.state.position < 4) {
+        } else if (this.state.position < 1) {
             this.setState({ positionError: "Your position is too short." })
         } else if (this.state.age < 18) {
             this.setState({ ageError: "please add valid age count." })
@@ -160,11 +160,11 @@ export default class  EditEmployee extends Component {
                                 <div class="grid grid-cols-1 gap-4 content-start pt-5 px-20">
                                     <div className="formdiv">
                                         <form className='' onSubmit={this.onSubmit}>
-                                        <p className='text-4xl font-semibold text-black uppercase drop-shadow-lg'>
-                                                    Update Employee</p>
-                                            <div class="grid grid-cols-3 gap-4 form-group">
+                                        <h3 className='text-4xl font-semibold text-black uppercase drop-shadow-lg'>
+                                                    Update Employee</h3>
+                                            <div class="form-row" >
                                             
-                                                <div className="form-group">
+                                            <div class="form-group col-md-6">
                                                     <label className='block mb-2 text-lg font-medium text-gray-900 dark:text-white'>Employee ID </label>
                                                     <input type="text"
                                                         // required
@@ -174,7 +174,7 @@ export default class  EditEmployee extends Component {
 
                                                     /> <p className="block text-lg font-medium text-red-900 dark:text-white" style={{color:'red'}}>{this.state.empIDError}</p>
                                                 </div>
-                                                <div className="form-group">
+                                                <div class="form-group col-md-6">
                                                     <label className='block mb-2 text-lg font-medium text-gray-900 dark:text-white' >First Name</label>
                                                     <input type="text"
                                                         required
@@ -183,7 +183,7 @@ export default class  EditEmployee extends Component {
                                                         onChange={this.onChangeFirstName}
                                                     /><p className="block text-lg font-medium text-red-900 dark:text-white" style={{color:'red'}}>{this.state.firstNameError}</p>
                                                 </div>
-                                                <div className="form-group">
+                                                <div class="form-group col-md-6">
                                                     <label className='block mb-2 text-lg font-medium text-gray-900 dark:text-white' >Last Name</label>
                                                     <input type="text"
                                                         required
@@ -192,9 +192,9 @@ export default class  EditEmployee extends Component {
                                                         onChange={this.onChangeLastName}
                                                     /><p className="block text-lg font-medium text-red-900 dark:text-white" style={{color:'red'}}>{this.state.lastNameError}</p>
                                                 </div>
-                                            </div>
-                                            <div class="grid grid-cols-2 gap-4 form-group">
-                                                <div className="form-group">
+                                            
+                                            
+                                                <div class="form-group col-md-6">
                                                     <label className='block mb-2 text-lg font-medium text-gray-900 dark:text-white'>Contact Number</label>
                                                     <input type="text"
                                                         required
@@ -204,7 +204,7 @@ export default class  EditEmployee extends Component {
                                                     />
                                                     <p className="block text-lg font-medium text-red-900 dark:text-white" style={{color:'red'}}>{this.state.phoneNoError}</p>
                                                 </div>
-                                                <div className="form-group">
+                                                <div class="form-group col-md-6">
                                                     <label className='block mb-2 text-lg font-medium text-gray-900 dark:text-white'>Position</label>
                                                     <input type="text"
                                                         required
@@ -214,9 +214,9 @@ export default class  EditEmployee extends Component {
                                                     />
                                                     <p className="block text-lg font-medium text-red-900 dark:text-white" style={{color:'red'}}>{this.state.positionError}</p>
                                                 </div>
-                                            </div>
-                                            <div className="grid grid-cols-3 gap-4 form-group">
-                                                <div class="">
+                                            
+                                           
+                                                <div class="form-group col-md-6">
                                                     <label className='block mb-2 text-lg font-medium text-gray-900 dark:text-white' for="grid-state">Salary</label>
                                                 <input type="number"
                                                     required
@@ -227,7 +227,7 @@ export default class  EditEmployee extends Component {
                                                 <p className="block text-lg font-medium text-red-900 dark:text-white" style={{color:'red'}}>{this.state.salaryError}</p>
 
                                                 </div>
-                                                <div className="form-group">
+                                                <div class="form-group col-md-6">
                                                     <label className='block mb-2 text-lg font-medium text-gray-900 dark:text-white'>Gender</label>
                                                     <input type="text"
                                                         required
@@ -236,7 +236,7 @@ export default class  EditEmployee extends Component {
                                                         onChange={this.onChangeGender}
                                                     />
                                                 </div>
-                                                <div className="form-group">
+                                                <div class="form-group col-md-6">
                                                     <label className='block mb-2 text-lg font-medium text-gray-900 dark:text-white'>Age</label>
                                                     <input type="number"
                                                         required
@@ -248,6 +248,7 @@ export default class  EditEmployee extends Component {
                                                 </div>
                                                 <p />
 
+                                            
                                             </div>
 
                                             <div className="text-center align-middle form-group">
