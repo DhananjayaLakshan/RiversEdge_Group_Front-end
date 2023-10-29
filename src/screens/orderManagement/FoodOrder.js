@@ -4,6 +4,7 @@ import Swal from 'sweetalert2';
 import axios from 'axios';
 
 export default function FoodOrder() {
+    
     const { userId, foodItem, price } = useParams();
     const user = JSON.parse(localStorage.getItem("currentUser"))
 
