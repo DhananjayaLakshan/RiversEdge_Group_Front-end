@@ -138,8 +138,6 @@ export function Bookings() {
         doc.save('booking_report.pdf');
     };
 
-
-
     // Function to generate and download the Excel report
     const generateExcelReport = () => {
 
