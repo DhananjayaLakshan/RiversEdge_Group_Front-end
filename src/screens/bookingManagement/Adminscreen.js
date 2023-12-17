@@ -44,7 +44,7 @@ export default function Adminscreen() {
                     <Rooms />
                 </TabPane>
 
-                {/* <TabPane tab="Users" key="4">
+                <TabPane tab="Users" key="4">
                     <Users />
                 </TabPane>
 
@@ -54,19 +54,19 @@ export default function Adminscreen() {
 
                 <TabPane tab="Service" key="6">
                     <Services />
-                </TabPane> */}
+                </TabPane>
 
                 <TabPane tab="Add Room" key="7">
                     <AddRoom />
                 </TabPane>
 
-                {/* <TabPane tab="Add Package" key="8">
+                <TabPane tab="Add Package" key="8">
                     <AddPackage />
                 </TabPane>
 
                 <TabPane tab="Add Services" key="9">
                     <AddService />
-                </TabPane> */}
+                </TabPane>
             </Tabs>
         </div>
     );
