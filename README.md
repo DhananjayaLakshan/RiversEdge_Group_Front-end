@@ -1,70 +1,33 @@
-# Getting Started with Create React App
+<h1><b>Food and Hospitality Management System</b></h1>
+<p> 
+  This is an academic project in Year 2 Semester 2. I use React and Bootstrap to build the Front-end. Node and Express JS are used to code the Backend of the project. I used MongoDB as the database of this web application. This system has 8 management systems,   
+</p>
+<ul>
+  <li>Room Booking Management System</li>
+  <li>Event Booking Management System</li>
+  <li>Customer Management System</li>
+  <li>Employee Management System</li>
+  <li>Food and Beverage Management System</li>
+  <li>Order Management System</li>
+  <li>Utility Bill Management System</li>
+  <li>Inventory Management System</li>  
+</ul>  
+<p>In this system customers can handle their profile activities. Once they register to the system they can search rooms, and filter rooms by room type then, the customers must pick a date range and customer can book their rooms. Customer can cancel their bookings and Admin can add, update details and remove rooms from the database. Admin can view a summary of total bookings,  total cancel bookings, and total income in the dashboard.  There is a middleware to upload images to web applications. It is the same as the Event Booking Management System, Food and Beverage Management System, and Order Management System. In the Customer Management System customers can give reviews about the hotel and they can edit it. Login and registration activities and profile management are included. In the Employee Management System, the admin can add employees and edit the details of employees. in the Utility Bill Management System admin can add bills and their expenses all the bills and expenses are calculated in the admin section. Inventory Management System can add inventories and do crud operations. In the all of the management systems have search options and filter options and specialy they include report generations. </p></br>
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+<p>Below are some screenshots of the project. </p>
 
-## Available Scripts
 
-In the project directory, you can run:
+![landingpage](https://github.com/DhananjayaLakshan/RiversEdge_Group_Front-end/blob/main/screentshots/localhost_3000_roomBooking%20(2).png)
+![menu](https://github.com/DhananjayaLakshan/RiversEdge_Group_Front-end/blob/main/screentshots/localhost_3000_menu.png)
+![profile](https://github.com/DhananjayaLakshan/RiversEdge_Group_Front-end/blob/main/screentshots/localhost_3000_profile.png)
+![dining](https://github.com/DhananjayaLakshan/RiversEdge_Group_Front-end/blob/main/screentshots/localhost_3000_roomBooking%20(4).png)
+![menuList](https://github.com/DhananjayaLakshan/RiversEdge_Group_Front-end/blob/main/screentshots/localhost_3000_roomBooking%20(5).png)
+![reservationForm](https://github.com/DhananjayaLakshan/RiversEdge_Group_Front-end/blob/main/screentshots/Screenshot%20(182).png)
+![Delete](https://github.com/DhananjayaLakshan/RiversEdge_Group_Front-end/blob/main/screentshots/localhost_3000_profile%20(1).png)
+![admin1](https://github.com/DhananjayaLakshan/RiversEdge_Group_Front-end/blob/main/screentshots/localhost_3000_admin.png)
 
-### `npm start`
+![admin1](https://github.com/DhananjayaLakshan/RiversEdge_Group_Front-end/blob/main/screentshots/localhost_3000_admin%20(1).png)
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+![admin2](https://github.com/DhananjayaLakshan/RiversEdge_Group_Front-end/blob/main/screentshots/localhost_3000_admin%20(2).png)
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
-
-### `npm test`
-
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
-
-### `npm run build`
-
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
-
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
-
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
-
-### `npm run eject`
-
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
-
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
-
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+![admin3](https://github.com/DhananjayaLakshan/RiversEdge_Group_Front-end/blob/main/screentshots/localhost_3000_admin%20(3).png)
